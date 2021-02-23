@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 //pour deployer la servlet jersey
 public class MyConfig {
 
-    @Bean //pour que cette methode s'execute au demarage.
+    // @Bean //pour que cette methode s'execute au demarage.
     public ResourceConfig resourceConfig(){
         ResourceConfig jerseyServlet= new ResourceConfig();
         jerseyServlet.register(CompteRestJaxRSAPI.class);
