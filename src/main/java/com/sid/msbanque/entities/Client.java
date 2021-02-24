@@ -1,12 +1,18 @@
 package com.sid.msbanque.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.Collection;
-
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
 public class Client {
@@ -15,5 +21,7 @@ public class Client {
     private Long id;
     private String name;
     @OneToMany(mappedBy = "client")
+    @XmlTransient //pour jaxB
+    @JsonIgnore //pour Jackson
     private Collection<Compte> comptes;
 }
