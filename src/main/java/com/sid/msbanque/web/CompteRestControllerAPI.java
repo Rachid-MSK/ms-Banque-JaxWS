@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+// @RestController
 @RequestMapping("/banque")
  //on créer rest api on utilisant spring
 public class CompteRestControllerAPI {
